@@ -47,7 +47,7 @@ body{
 
 .content-highlights{
     color: gold;
-    white-space: nowrap; /* Verhindert Zeilenumbrüche innerhalb der Highlights */
+    white-space: nowrap; 
 }
 
 .navigation{
@@ -79,11 +79,25 @@ body{
     bottom: 0px;
     font-weight: 800;
     display: flex;
-    flex-direction: row; /* Alle Elemente in einer Reihe */
     align-items: center;
-    justify-content:center;
+    justify-content: space-between;
     color: white;
     text-decoration: none;
+}
+
+.page-bottom-text {
+    flex: 1;
+    text-align: left;
+    margin-top: 0px;
+}
+
+.page-bottom-links {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 0px;
 }
 
 .burger-menu {
@@ -111,32 +125,56 @@ body{
 .burger-links {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 16px;
-    background: black;
-    padding: 10px;
-    border-radius: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
 .burger-links a {
     color: white;
     text-decoration: none;
-    margin: 5px 0;
+    margin: 20px 0;
+    font-size: 1.5em;
 }
 
 .burger-links a:hover {
     color: gold;
 }
 
+.burger-links button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    background: gold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.burger-links button:hover {
+    background: white;
+    color: rgb(0, 0, 0);
+}
+
 .social-links{
     margin: 5px;
-    text-decoration: none; /* Entfernt Unterstreichungen */
+    text-decoration: none; 
 }
 
 .social-links img{
-    height: 20px; /* Maximalhöhe für alle Logos */
+    height: 25px; 
     width: auto;
+}
+
+.page-bottom-text p {
+    margin-top: 0px;
 }
 
 @media (max-width: 768px) {
@@ -148,40 +186,45 @@ body{
         display: flex;
     }
 
-    .burger-links {
-        display: none;
-    }
-
     .logo {
         width: auto;
-        height: 20px; /* Halb so groß auf mobilen Geräten */
+        height: 30px; 
         margin-right: auto;
     }
 
     .content {
-        font-size: 0.75em; /* Halb so groß auf mobilen Geräten */
-        max-width: 250px; /* Maximalbreite für Mobilgeräte */
+        font-size: 0.75em; 
+        max-width: 250px; 
     }
 
     .page-bottom {
-        font-size: 12px; /* Halb so große Schrift auf mobilen Geräten */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .page-bottom-text {
+        order: 2;
+        font-size: 14px;
+        margin-top: 5px; /* Halb so großer Abstand */
+    }
+
+    .page-bottom-links {
+        order: 1; 
+        margin-bottom: 5px; /* Halb so großer Abstand */
     }
 
     .social-links img {
-        height: 10px; /* Halb so große Logos auf mobilen Geräten */
+        height: 25px; 
     }
 }
         </style>
         <script>
             function toggleMenu() {
                 const links = document.querySelector('.burger-links');
-                links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+                const isVisible = links.style.display === 'flex';
+                links.style.display = isVisible ? 'none' : 'flex';
             }
-
-            document.addEventListener("DOMContentLoaded", function() {
-                const links = document.querySelector('.burger-links');
-                links.style.display = 'none'; // Default: geschlossen
-            });
         </script>
     </head>
 
@@ -210,6 +253,7 @@ body{
             <a href="./Branches/carrer/carrer.html">Career</a>
             <a href="./Branches/showroom/showroom.html">My Projects</a>
             <a href="./Branches/booknotes/booknotes.html">Book Notes</a>
+            <button onclick="toggleMenu()">Close Menu</button>
         </div>
 
         <div class="content">
@@ -219,8 +263,10 @@ body{
         </div>
 
         <div class="page-bottom">
-            <p>&copy; 2025 Raik Lasner | All Rights Reserved |</p>
-            <div>              
+            <div class="page-bottom-text">
+                <p>&copy; 2025 Raik Lasner | All Rights Reserved</p>
+            </div>
+            <div class="page-bottom-links">              
                 <a class="social-links" href="https://www.linkedin.com/in/raik-lasner-productmanager/">
                     <img src="./Ressources/linkedinlogo.png" alt="Linkedin logo">
                 </a>
