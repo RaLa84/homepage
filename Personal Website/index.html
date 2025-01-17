@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Raik's Place'</title>
+        <style>
+            @font-face {
+    font-family:'Roboto'; /* Ein Name, den du später verwendest */
+    src: url('Ressources/Roboto/Roboto-Italic-VariableFont.ttf') format('ttf'), /* Pfad zur Schriftart */
+         url('Ressources/Roboto/Roboto-VariableFont.ttf') format('ttf');  /* Alternative Formate */
+    font-weight: normal; /* Gewicht: z. B. normal, bold */
+    font-style: normal;  /* Stil: z. B. normal, italic */
+}
+
+body{
+    margin: 0px;
+    font-family:'Roboto'
+}
+
+.header-image{
+    height: 100vh;
+    width: 100vw;
+    object-fit:cover;
+    filter: brightness(0.5);
+}
+
+.logo{
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    width: 250px;
+    height: auto;
+}
+
+.content{
+    position:absolute;
+    left: 5%;
+    top: 20%;
+    color: white;
+    text-shadow: 5px 5px 5px #331b2974;
+    font-size: 1.5em; /* Standardgröße */
+    word-break: break-word;
+    max-width: 500px; /* Maximalbreite für Desktop */
+}
+
+.content-highlights{
+    color: gold;
+    white-space: nowrap; /* Verhindert Zeilenumbrüche innerhalb der Highlights */
+}
+
+.navigation{
+    font-size: 24px;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-link{
+    color: whitesmoke;
+    margin-left: 16px;
+    text-decoration: none;
+}
+
+.menu-link:hover {
+    color: gold;
+}
+
+.page-bottom{
+    font-size: 24px;
+    position: absolute;
+    right: 50px;
+    left: 50px;
+    bottom: 0px;
+    font-weight: 800;
+    display: flex;
+    flex-direction: row; /* Alle Elemente in einer Reihe */
+    align-items: center;
+    justify-content:center;
+    color: white;
+    text-decoration: none;
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 32px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: gold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.burger-menu div {
+    width: 30px;
+    height: 3px;
+    background: black;
+    margin: 3px 0;
+}
+
+.burger-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.burger-links a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.burger-links a:hover {
+    color: gold;
+}
+
+.social-links{
+    margin: 5px;
+    text-decoration: none; /* Entfernt Unterstreichungen */
+}
+
+.social-links img{
+    height: 20px; /* Maximalhöhe für alle Logos */
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .burger-links {
+        display: none;
+    }
+
+    .logo {
+        width: auto;
+        height: 20px; /* Halb so groß auf mobilen Geräten */
+        margin-right: auto;
+    }
+
+    .content {
+        font-size: 0.75em; /* Halb so groß auf mobilen Geräten */
+        max-width: 250px; /* Maximalbreite für Mobilgeräte */
+    }
+
+    .page-bottom {
+        font-size: 12px; /* Halb so große Schrift auf mobilen Geräten */
+    }
+
+    .social-links img {
+        height: 10px; /* Halb so große Logos auf mobilen Geräten */
+    }
+}
+        </style>
+        <script>
+            function toggleMenu() {
+                const links = document.querySelector('.burger-links');
+                links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const links = document.querySelector('.burger-links');
+                links.style.display = 'none'; // Default: geschlossen
+            });
+        </script>
+    </head>
+
+    <body>
+
+        <img class="header-image" src="./Ressources/Meontop.jpeg" alt="A selfi of Raik on top of a mountain">
+   
+        <a href="index.html"><img class="logo" src="./Ressources/Logo3.png" alt="Logo showing the name Raik Lasner and html tags"></a>
+
+        <div class="navigation" aria-label="Main Navigation">
+
+            <div>
+                <a class="menu-link" href="./Branches/carrer/carrer.html">Career</a>
+                <a class="menu-link" href="./Branches/showroom/showroom.html">My Projects</a>
+                <a class="menu-link" href="./Branches/booknotes/booknotes.html">Book Notes</a>
+            </div>
+        </div>
+
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="burger-links">
+            <a href="./Branches/carrer/carrer.html">Career</a>
+            <a href="./Branches/showroom/showroom.html">My Projects</a>
+            <a href="./Branches/booknotes/booknotes.html">Book Notes</a>
+        </div>
+
+        <div class="content">
+            <h1>Climbing higher: <br> Have a look at 
+                <span class="content-highlights">my journey</span> and <span class="content-highlights">my accomplishments.</span>
+            </h1>
+        </div>
+
+        <div class="page-bottom">
+            <p>&copy; 2025 Raik Lasner | All Rights Reserved |</p>
+            <div>              
+                <a class="social-links" href="https://www.linkedin.com/in/raik-lasner-productmanager/">
+                    <img src="./Ressources/linkedinlogo.png" alt="Linkedin logo">
+                </a>
+                <a class="social-links" href="https://www.xing.com/profile/Raik_Lasner">
+                    <img src="./Ressources/xinglogo.png" alt="logo xing">
+                </a>
+                <a class="social-links" href="mailto:raik.lasner@googlemail.com">
+                    <img src="./Ressources/gmail.png" alt="Gmail logo">
+                </a>
+            </div>
+        </div>
+        
+    </body>
+
+</html>
