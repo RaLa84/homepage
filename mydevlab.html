@@ -5,6 +5,22 @@
         <meta charset="utf-8">
         <title>Raik's Resumee</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script>
+            function toggleMenu() {
+                const links = document.querySelector('.burger-links');
+                const isVisible = links.style.display === 'flex';
+                links.style.display = isVisible ? 'none' : 'flex';
+            }
+
+            (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized")
+            {window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};
+            window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");
+            script.src="https://www.chatbase.co/embed.min.js";script.id="CzgG-7YNMW0JSZTfv01kn";script.domain="www.chatbase.co";
+            document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+
+
+        </script>
     </head>
 
     <body>
@@ -33,6 +49,8 @@
             <a href="mydevlab.html">MyDevLab</a>
             <button onclick="toggleMenu()">Close Menu</button>
         </div>
+
+        <div class="underconstruction"><img class="construction-image" src="./Ressources/underconstruction.png" alt="a sign saying the page is under construction"></div>
         
         <div class="page-bottom">
             <div class="page-bottom-text">
