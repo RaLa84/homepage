@@ -1,0 +1,580 @@
+@font-face {
+    font-family:'Roboto'; /* Ein Name, den du später verwendest */
+    src: url('Ressources/Roboto/Roboto-Italic-VariableFont.ttf') format('ttf'), /* Pfad zur Schriftart */
+         url('Ressources/Roboto/Roboto-VariableFont.ttf') format('ttf');  /* Alternative Formate */
+    font-weight:normal; /* Gewicht: z. B. normal, bold */
+    font-style:normal;  /* Stil: z. B. normal, italic */
+}
+
+
+.box p{
+    line-height: 1.2;
+    color: #666;
+    font-size: 17px;
+}
+
+.box h4{
+    position: relative;
+    color: gold;
+}
+
+.box h3{
+    font-size: 19px;
+    padding: 10px 0px 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #444;
+}
+
+.burger-menu{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 32px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: gold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.burger-menu div {
+    width: 30px;
+    height: 3px;
+    background: black;
+    margin: 3px 0;
+}
+
+.burger-links{
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.burger-links a{
+    color: white;
+    text-decoration: none;
+    margin: 20px 0;
+    font-size: 1.5em;
+}
+
+.burger-links a:hover {
+    color: gold;
+}
+
+.burger-links button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    background: gold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.burger-links button:hover{
+    background: white;
+    color: rgb(0, 0, 0);
+}
+
+
+.CV-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 66%;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.col header.title{
+    font-family: Arial, Helvetica, sans-serif;
+    color: gold;
+    padding: 0px 0px 20px;
+}
+
+.col .contents{
+    padding: 0px 30px;
+    border-left: 2px solid #bababa;
+}
+
+.col .contents .box{
+    position: relative;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-bottom: 20px;
+}
+
+.col .contents .box:hover {
+    box-shadow: 0px 3px 12px 0px #ccc;
+    border: 1px solid transparent;
+}
+
+.col .contents .box::before {
+    content: " ";
+    color: gold;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    right: calc(100% + 22px);
+    top: 0;
+    background-color: gold;
+    border: 2px solid white;
+}
+
+.CV-container iframe {
+    height: auto;
+    align-items: center;
+    width: 95%;
+    height: 80%;
+    margin-left: 2.5%;
+}
+
+.CV-container p {
+    text-align: center;
+    color: gold;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.header-image{
+    height: 100vh;
+    width: 100vw;
+    object-fit:cover;
+    filter: brightness(0.5);
+}
+
+.logo{
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    width: 250px;
+    height: auto;
+}
+
+.page-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+}
+
+.page-bottom-links {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 0px;
+}
+   
+.page-bottom p, .page-bottom a {
+    margin: 0;
+    color: white;
+    text-decoration: none;
+}
+
+main.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.menu-link{
+    color: whitesmoke;
+    margin-left: 16px;
+    text-decoration: none;
+}
+
+.menu-link:hover {
+    color: gold;
+}
+
+.navigation{
+    font-size: 24px;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation{
+    font-size: 24px;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resume-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 20px;
+    border-radius: 10px;
+ 
+    width: 80%;
+    max-width: 1000px;
+    margin: 100px;
+}
+
+.social-links{
+    margin-left: 5px;
+    text-decoration: none; 
+}
+
+.social-links img{
+    height: 25px; 
+    width: auto;
+}
+
+.social-links p{
+    margin-left: 25px;
+    margin-top: 7px;
+}
+
+.typing-text{
+    font-size: 1em; /* Passt die Schriftgröße an die <h1> an */
+    font-weight: bold;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.typing-text span::before{
+    content: 'my career';
+    color: gold;
+    animation: words 4s infinite;
+}
+
+.underconstruction{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+}
+
+.underconstruction img{
+    height: 250px;
+    width: auto;
+    margin-bottom: 25%;
+}
+
+
+
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+
+    .bur
+
+    .page-bottom p{
+margin: 0;
+    }
+
+    .page-bottom-links {
+        order: 1; 
+        margin-bottom: 0;
+        font-size: 12px;
+        align-items: center;
+    }
+
+    .social-links img {
+        height: 15px; 
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Roboto';
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./Ressources/clouds.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1; /* Stellt sicher, dass das Pseudo-Element hinter dem Inhalt bleibt */
+    filter: brightness(0.5); /* Nur hier abdunkeln */
+}
+
+.timeline{
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.container{
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    animation: movedown 1s linear forwards;
+    opacity:0;
+}
+
+
+@keyframes movedown {
+    0%{
+        opacity:1;
+        transform:translateY(-30px);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
+.container:nth-child(2){
+    animation-delay: 1s;
+}
+.container:nth-child(3){
+    animation-delay: 2s;
+}
+.container:nth-child(4){
+    animation-delay: 3s;
+}
+.container:nth-child(5){
+    animation-delay: 4s;
+}
+.container:nth-child(6){
+    animation-delay: 5s;
+}
+
+.text-box{
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.left-container{
+    left: 0;
+}
+
+.right-container{
+    left: 50%;
+}
+
+.container img{
+    position: absolute;
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+}
+
+.right-container img{
+left: -20px;
+}
+
+.timeline::after{
+    content:'';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -1;
+    animation: moveline 6s linear forwards;
+
+}
+
+@keyframes moveline{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+
+.text-box h2{
+    font-weight: 600;
+}
+
+.text-box small{
+    display:inline-block;
+    margin-bottom: 15px;
+}
+
+.left-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #fff;
+    right: -15px;
+}
+
+.right-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
+    left: -15px;
+}
+
+@media screen and (max-width: 600px){
+
+    .timeline{
+        margin-top: 0;
+        margin-left: 50px auto;
+        margin-right: 50px auto;
+        margin-bottom: 50px auto;
+    }
+    .timeline::after{
+        left: 31px;
+    }
+    .container{
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+    .text-box small{
+        margin-bottom: 10px;
+    }
+    .right-container{
+        left: 0;
+    }
+    .left-container img, .right-container img{
+        left: 10px;
+    }
+    .left-container-arrow, .right-container-arrow{
+        border-right: 15px solid #fff;
+        border-left: 0;
+        left: -15px;
+    }
+
+}
+
+.container h3{
+    color: #2e364a;
+}
+
+.container-head{
+    margin: 30px;
+    background-color:white;
+    border-radius: 6px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    margin-top: 10px;
+
+}
+
+.container-head h1{
+    margin-bottom: 20px;
+    margin-top: 150px;
+    background-color:white;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.container-head-profil{
+    width:50px;
+    height: 50px;
+    position: absolute;
+    padding-top: 5px;
+    top: 90px;
+    right: 75px;
+    margin: 10px;
+    background-color:white;
+}
+
+.container-head-profil img{
+    width:50px;
+    height: 50px;
+}
+
+.container-head p{
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    font-style: italic;
+    font-size: 22px;
+}
+
+.container-head-download-area{
+    width: 75px;
+    margin: 10px;
+    background-color:white;
+    padding-bottom: 10px;
+    text-align: center;
+    width: auto;
+} 
+
+.container-head-download-area a{
+    display: inline-block;
+    margin-top: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2e364a;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.container-head-download-area a:hover{
+    background-color: #1d2433;
+}
+
