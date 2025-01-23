@@ -183,7 +183,6 @@
     flex: 1;
     text-align: center;
     display: flex;
-    justify-content: center;
     gap: 10px;
     margin-bottom: 0px;
 }
@@ -593,4 +592,13 @@ margin: 0;
 
 .container-head-download-area a:hover{
     background-color: #1d2433;
+}
+
+.page-bottom{
+    background-color: #00000048;
+    width: 100vw;
+    align-items: start;
+    position: relative;
+    bottom: 0;
+    border-top: solid rgba(255, 217, 0, 0.299);
 }
